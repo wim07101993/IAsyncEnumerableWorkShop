@@ -1,0 +1,52 @@
+{
+   // Use IntelliSense to find out which attributes exist for C# debugging
+   // Use hover for the description of the existing attributes
+   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+   "version": "0.2.0",
+   "configurations": [
+    {
+        "name": "Encoder",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "buildEncoder",
+        "program": "${workspaceFolder}/Encoder/bin/Debug/net5.0/Encoder.dll",
+        "args": [ "-v" ],
+        "cwd": "${workspaceFolder}/Encoder",
+        "console": "internalConsole",
+        "stopAtEntry": false
+    }, 
+    {
+        "name": "Decoder",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "buildDecoder",
+        "program": "${workspaceFolder}/Decoder/bin/Debug/net5.0/Decoder.dll",
+        "args": [ "-v" ],
+        "cwd": "${workspaceFolder}/Decoder",
+        "console": "internalConsole",
+        "stopAtEntry": false
+    },
+    {
+        "name": "OldDecoder",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "buildOldDecoder",
+        "program": "${workspaceFolder}/OldDecoder/bin/Debug/net5.0/OldDecoder.dll",
+        "args": [ "-v" ],
+        "cwd": "${workspaceFolder}/OldDecoder",
+        "console": "internalConsole",
+        "stopAtEntry": false
+    },
+    {
+        "name": "Workshop",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "buildWorkShop",
+        "program": "${workspaceFolder}/OldDecoder/bin/Debug/net5.0/buildWorkshop.dll",
+        "args": [ "-v" ],
+        "cwd": "${workspaceFolder}/buildWorkshop",
+        "console": "internalConsole",
+        "stopAtEntry": false
+    }
+    ]
+}

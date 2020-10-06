@@ -36,7 +36,7 @@
 				"console": "internalConsole",
 				"stopAtEntry": false
 			},
-			 {
+			{
 				"name": "OldDecoder",
 				"type": "coreclr",
 				"request": "launch",
@@ -44,6 +44,17 @@
 				"program": "${workspaceFolder}/OldDecoder/bin/Debug/net5.0/OldDecoder.dll",
 				"args": [ "-v" ],
 				"cwd": "${workspaceFolder}/OldDecoder",
+				"console": "internalConsole",
+				"stopAtEntry": false
+			},
+			{
+				"name": "Workshop",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "buildWorkShop",
+				"program": "${workspaceFolder}/OldDecoder/bin/Debug/net5.0/Workshop.dll",
+				"args": [ "-v" ],
+				"cwd": "${workspaceFolder}/Workshop",
 				"console": "internalConsole",
 				"stopAtEntry": false
 			}
@@ -88,6 +99,18 @@
 				"args": [
 					"build",
 					"${workspaceFolder}/Decoder/Decoder.csproj",
+					"/property:GenerateFullPaths=true",
+					"/consoleloggerparameters:NoSummary"
+				],
+				"problemMatcher": "$msCompile"
+			},
+			{
+				"label": "buildWorkShop",
+				"command": "dotnet",
+				"type": "process",
+				"args": [
+					"build",
+					"${workspaceFolder}/WorkShop/WorkShop.csproj",
 					"/property:GenerateFullPaths=true",
 					"/consoleloggerparameters:NoSummary"
 				],

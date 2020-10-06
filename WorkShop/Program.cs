@@ -1,12 +1,20 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace WorkShop
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        private const string FilePath = "Large.dat";
+
+        private static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var data = new Data(FilePath);
+
+            await foreach(var t in data.Temperature) 
+            {
+                Console.WriteLine($"{t} ");
+            }
         }
     }
 }

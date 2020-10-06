@@ -14,7 +14,7 @@ namespace Decoder
         {
             ParseArgs(args);
 
-            var data = new Data(_filePath);
+            using var data = new Data(_filePath);
 
             await foreach (var t in data.Temperature)
             {
