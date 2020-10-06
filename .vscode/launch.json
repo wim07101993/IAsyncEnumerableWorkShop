@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Encoder",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildEncoder",
+            "program": "${workspaceFolder}/Encoder/bin/Debug/netcoreapp5/Encoder.dll",
+            "args": [ "-v" ],
+            "cwd": "${workspaceFolder}/Encoder",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }, 
+        {
+            "name": "Decoder",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildDecoder",
+            "program": "${workspaceFolder}/Decoder/bin/Debug/netcoreapp5/Decoder.dll",
+            "args": [ "-v" ],
+            "cwd": "${workspaceFolder}/Decoder",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+         {
+            "name": "OldDecoder",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildOldDecoder",
+            "program": "${workspaceFolder}/OldDecoder/bin/Debug/netcoreapp5/OldDecoder.dll",
+            "args": [ "-v" ],
+            "cwd": "${workspaceFolder}/OldDecoder",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}
