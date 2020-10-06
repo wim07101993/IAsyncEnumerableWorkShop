@@ -4,5 +4,106 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {},
+	"extensions": { 
+		"recommendations": [ 
+			"ms-dotnettools.csharp", 
+			"wk-j.vscode-cil-complete"
+		 ]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Encoder",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "buildEncoder",
+				"program": "${workspaceFolder}/Encoder/bin/Debug/net5.0/Encoder.dll",
+				"args": [ "-v" ],
+				"cwd": "${workspaceFolder}/Encoder",
+				"console": "internalConsole",
+				"stopAtEntry": false
+			}, 
+			{
+				"name": "Decoder",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "buildDecoder",
+				"program": "${workspaceFolder}/Decoder/bin/Debug/net5.0/Decoder.dll",
+				"args": [ "-v" ],
+				"cwd": "${workspaceFolder}/Decoder",
+				"console": "internalConsole",
+				"stopAtEntry": false
+			},
+			 {
+				"name": "OldDecoder",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "buildOldDecoder",
+				"program": "${workspaceFolder}/OldDecoder/bin/Debug/net5.0/OldDecoder.dll",
+				"args": [ "-v" ],
+				"cwd": "${workspaceFolder}/OldDecoder",
+				"console": "internalConsole",
+				"stopAtEntry": false
+			}
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "buildEncoder",
+				"command": "dotnet",
+				"type": "process",
+				"args": [
+					"build",
+					"${workspaceFolder}/Encoder/Encoder.csproj",
+					"/property:GenerateFullPaths=true",
+					"/consoleloggerparameters:NoSummary"
+				],
+				"problemMatcher": "$msCompile"
+			},
+			{
+				"label": "decoderTasks",
+				"dependsOn": [ "buildDecoder", "ildasmDecoder"],
+				"dependsOrder": "sequence"
+			},
+			{
+				"label": "buildOldDecoder",
+				"command": "dotnet",
+				"type": "process",
+				"args": [
+					"build",
+					"${workspaceFolder}/OldDecoder/OldDecoder.csproj",
+					"/property:GenerateFullPaths=true",
+					"/consoleloggerparameters:NoSummary"
+				],
+				"problemMatcher": "$msCompile"
+			},
+			{
+				"label": "buildDecoder",
+				"command": "dotnet",
+				"type": "process",
+				"args": [
+					"build",
+					"${workspaceFolder}/Decoder/Decoder.csproj",
+					"/property:GenerateFullPaths=true",
+					"/consoleloggerparameters:NoSummary"
+				],
+				"problemMatcher": "$msCompile"
+			},
+			{
+				"label": "ildasmDecoder",
+				"command": "dotent",
+				"type": "process",
+				"args": [
+					"ildasm",
+					"${workspaceFolder}/Decoder/bin/Debug/net5.0/Decoder.dll",
+					"-o",
+					"Decoder.il"
+				]
+			}
+		]
+	}
 }
