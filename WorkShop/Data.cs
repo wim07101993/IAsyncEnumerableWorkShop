@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace WorkShop
 {
@@ -7,16 +8,15 @@ namespace WorkShop
     {
         public Data(string filePath)
         {
-            // TODO
+            Stream = new BufferedStream(new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read));
         }
 
-        
+        internal object Lock { get; } = new object();
+        internal Stream Stream { get; }
+
         public IAsyncEnumerable<ushort> Temperature { get; }
         public IAsyncEnumerable<ushort> Pressure { get; }
 
-        public void Dispose() 
-        {
-            // TODO
-        }
+        public void Dispose() => Stream.Dispose();
     }
 }

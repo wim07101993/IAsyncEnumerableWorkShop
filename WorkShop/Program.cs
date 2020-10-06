@@ -5,7 +5,7 @@ namespace WorkShop
 {
     public class Program
     {
-        private const string FilePath = "Large.dat";
+        private const string FilePath = "Tiny.dat";
 
         private static async Task Main(string[] args)
         {
