@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Decoder
+namespace WorkShop
 {
     public class MeasurementEnumerable : IAsyncEnumerable<int>
     {
@@ -55,11 +55,7 @@ namespace Decoder
                             }
                         }
                     }
-#if NET5
                     else if (b is < 0 or '\r' or '\n')
-#else
-                    else if (b < 0 || b == '\r' || b == '\n')
-#endif
                     {
                         var end = _data.Stream.Position - 1;
                         Console.WriteLine($"Start: {start}; End: {end}");
@@ -131,11 +127,7 @@ namespace Decoder
                             continue;
                         }
 
-#if NET5
                         var n = b is > '/' and < ':'
-#else
-                        var n = b > '/' && b < ':'
-#endif
                             ? (byte)'0'
                             : throw new Exception($"Unexpected character {(char)b}");
 
@@ -147,7 +139,7 @@ namespace Decoder
 
                     _position = Stream.Position;
                 }
-
+                
                 if (count == 0)
                     return false;
 
@@ -155,12 +147,7 @@ namespace Decoder
                 return _valueEnumerator.MoveNext();
             }
 
-            public ValueTask DisposeAsync()
-#if NET5
-                => ValueTask.CompletedTask;
-#else
-                => default;
-#endif
+            public ValueTask DisposeAsync() => ValueTask.CompletedTask;
         }
     }
 }

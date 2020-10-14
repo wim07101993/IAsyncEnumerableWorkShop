@@ -7,7 +7,7 @@ namespace WorkShop
     {
         private const string FilePath = "Tiny.dat";
 
-        private static async Task Main(string[] args)
+        private static async Task Main()
         {
             var data = new Data(FilePath);
 

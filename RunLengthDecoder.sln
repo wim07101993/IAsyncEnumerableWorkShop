@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkShop", "WorkShop\WorkShop.csproj", "{675EED13-C927-453F-9BCB-E4F99A1E0FFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{957900E6-42B8-4E01-BDCB-051ABAEC9776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{957900E6-42B8-4E01-BDCB-051ABAEC9776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{957900E6-42B8-4E01-BDCB-051ABAEC9776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675EED13-C927-453F-9BCB-E4F99A1E0FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675EED13-C927-453F-9BCB-E4F99A1E0FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675EED13-C927-453F-9BCB-E4F99A1E0FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675EED13-C927-453F-9BCB-E4F99A1E0FFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

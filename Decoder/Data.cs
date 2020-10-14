@@ -16,8 +16,8 @@ namespace Decoder
         internal object Lock { get; } = new object();
         internal Stream Stream { get; }
 
-        public IAsyncEnumerable<ushort> Temperature { get; }
-        public IAsyncEnumerable<ushort> Pressure { get; }
+        public IAsyncEnumerable<int> Temperature { get; }
+        public IAsyncEnumerable<int> Pressure { get; }
 
         public void Dispose() => Stream.Dispose();
     }

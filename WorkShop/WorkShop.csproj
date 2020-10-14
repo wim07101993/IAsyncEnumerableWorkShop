@@ -2,18 +2,21 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0'">
-    <DefineConstants>TRACE;NET5</DefineConstants>
+    <TargetFrameworks>net5.0</TargetFrameworks>
+    <DefineConstants>TRACE</DefineConstants>
     <LangVersion>9</LangVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">
-    <DefineConstants>TRACE;NETCORE31</DefineConstants>
-    <LangVersion>8</LangVersion>
-  </PropertyGroup>
+  <ItemGroup>
+    <None Update="Large.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Small.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Tiny.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
-</Project>
 </Project>
